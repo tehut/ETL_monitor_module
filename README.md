@@ -3,7 +3,20 @@
 Module to create a single datadog monitor to monitor ETL job logs and alert if the job goes unexpectedly quiet.
 ## Datadog Provider requirements
 * The Datadog provider requires both `app_key` and `api_key` parameters 
+* Include the following `source` block separate from both the source block and the  the datadog provider block in order to configure the provider block.
 
+```
+terraform {
+  required_version = ">= 0.13"
+  required_providers {
+    datadog = {
+      source  = "DataDog/datadog"
+      version = "~> 2.7"
+
+    }
+  }
+}
+```
 ## Required Variables
 * `env` string 
 * `expected_count` string 
