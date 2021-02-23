@@ -16,10 +16,6 @@ variable "log_query" {
     DESCRIPTION
 }
 
-variable "message" {
-  type = string
-}
-
 variable "monitor_notification_recipients" {
   type        = list(string)
   description = <<-DESCRIPTION
